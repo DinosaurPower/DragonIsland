@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Loot : MonoBehaviour
 {
-   
+    public textUpdate tUpdate;
     public float radius;
     public void Find(Vector3 center)
     {
@@ -15,7 +15,10 @@ public class Loot : MonoBehaviour
         {
            if (hitCollider.CompareTag("Dragonfruit")){
             Destroy(hitCollider.gameObject);
-            Debug.Log("Yay");
+            if (tUpdate != null){
+            tUpdate.updateText();
+            }
+           
            }
         }
 
